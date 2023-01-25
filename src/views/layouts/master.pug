@@ -1,0 +1,34 @@
+include ../components/header
+include ../components/svg
+include ../components/form-components
+include ../components/select
+
+
+-
+  var test = 'test'
+
+block variables
+
+
+
+doctype html
+
+html(lang='ru')
+  
+  head
+    meta(charset="utf-8")
+    title= data.test
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  
+  body.body
+    
+    .wrapper
+      block header
+        +header
+
+      main.main
+        block content
+
+      block footer
+
+    block scripts

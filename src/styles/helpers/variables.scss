@@ -1,0 +1,28 @@
+// fonts
+$fs: 16px;
+
+
+:root {
+  // colors
+  --color-white: #fff;
+  --color-black: #0E1010;
+  --color-light-blue: #5ce1eb;
+  --color-blue: #2447ED;
+  --color-red: #ED2424;
+  --color-borders: #cfcbcb;
+}
+
+// media breakpoints
+$breakpoint-xs: 375px;
+$breakpoint-s: 576px;
+$breakpoint-m: 768px;
+$breakpoint-t: 1024px;
+$breakpoint: 1280px;
+$breakpoint-l: 1366px;
+$breakpoint-ll: 1440px;
+$breakpoint-xl: 1680px;
+$breakpoint-xxl: 1920px;
+
+$transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+$transition-duration: .5s;
+$transition: $transition-duration $transition-timing-function;

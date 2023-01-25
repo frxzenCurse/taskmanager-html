@@ -1,0 +1,150 @@
+.header {
+  $comp: &;
+  
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-borders);
+
+  &__inner {
+    padding: 20px 60px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__workspace {
+    padding: 5px 10px;
+    position: relative;
+    z-index: 0;
+
+    background: var(--color-light-blue);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &-button {
+      display: flex;
+      align-items: center;
+    }
+
+    &.active {
+      #{$comp}__dropdown {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    padding: 15px 10px;
+
+    width: 300px;
+
+    transition: $transition;
+    background: var(--color-light-blue);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__button {
+    padding: 5px;
+
+    width: 100%;
+
+    background: var(--color-white);
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__link {
+    
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+  }
+
+  &__icon {
+    margin-left: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__user {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    padding: 5px;
+
+    width: 100%;
+
+    border: 1px solid var(--color-black);
+  }
+}
+
+.user {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  &.dropdown {
+    
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

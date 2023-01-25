@@ -1,0 +1,134 @@
+.form {
+  $comp: &;
+
+  &__item {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 12px;
+      @media (max-width: ($breakpoint-xs - 1px)) {
+        margin-top: getRem(12px);
+      }
+    }
+  }
+
+  &__input {
+    padding: 16px 20px;
+    @media (max-width: ($breakpoint - 1px)) {
+      padding: 13px 20px;
+    }
+
+    width: 100%;
+
+    transition: $transition;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-borders);
+    border-radius: 8px;
+    
+    @include placeholder {
+      color: var(--color-black);
+    }
+
+    &:hover {
+      border-color: var(--color-blue);
+    }
+
+    &.parsley-error {
+      border-color: var(--color-red);
+    }
+  }
+
+  &__textarea {
+    padding: 16px 20px;
+    @media (max-width: ($breakpoint - 1px)) {
+      padding: 13px 20px;
+    }
+
+    width: 100%;
+    min-height: 120px;
+    @media (max-width: ($breakpoint - 1px)) {
+      min-height: 100px;
+    }
+    @media (max-width: ($breakpoint-xs - 1px)) {
+      min-height: 100px;
+    }
+
+    transition: $transition;
+    resize: none;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-borders);
+    border-radius: 8px;
+    letter-spacing: var(--letter-space);
+    @media (max-width: ($breakpoint - 1px)) {
+      @include fsl(12px);
+    }
+
+    @include placeholder {
+      color: var(--color-black);
+    }
+
+    &--small {
+      min-height: 84px;
+      @media (max-width: ($breakpoint - 1px)) {
+        min-height: 62px;
+      }
+      @media (max-width: ($breakpoint-xs - 1px)) {
+        min-height: 62px;
+      }
+    }
+
+    &:hover {
+      border-color: var(--color-blue);
+    }
+  }
+
+  &__inner {
+    margin-top: 32px;
+    @media (max-width: ($breakpoint - 1px)) {
+      margin-top: 16px;
+    }
+  }
+
+  &__bot {
+    margin-top: 32px;
+    @media (max-width: ($breakpoint - 1px)) {
+      margin-top: 16px;
+      display: block;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__checkbox {
+    margin-right: 15px;
+    @media (max-width: ($breakpoint - 1px)) {
+      margin-right: 0;
+      max-width: none;
+    }
+    max-width: 420px;
+  }
+
+  &__btn {
+    @media (max-width: ($breakpoint - 1px)) {
+      margin-top: 16px;
+      
+      width: auto;
+    }
+    width: 260px;
+    flex-shrink: 0;
+  }
+
+  &__container {
+    margin-left: 30px;
+  }
+
+  .parsley-errors-list {
+    margin-top: 8px;
+
+    li {
+      @include fsl(12px, 130%);
+      color: var(--color-red);
+    }
+  }
+}

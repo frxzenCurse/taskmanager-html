@@ -1,0 +1,20 @@
+
+
+mixin input
+  input.form__input(type = attributes.type)&attributes(attributes)
+
+mixin textarea
+  textarea.form__textarea(class=attributes.class placeholder = attributes.placeholder)&attributes(attributes)
+
+mixin checkbox 
+  .checkbox(class=attributes.class)
+    label.checkbox__label
+      input.checkbox__input(type="checkbox" required name=(attributes.name ? attributes.name : 'policy'))&attributes(attributes)
+      .checkbox__box 
+        +check-svg.checkbox__svg
+      if (attributes.text)
+        .checkbox__caption
+          |#{attributes.text}
+      else
+        .checkbox__text 
+          |Согласен на обработку персональных данных в соответствии с #[a.checkbox__link(href="#") политикой конфиденциальности]

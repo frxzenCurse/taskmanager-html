@@ -1,0 +1,41 @@
+.panel {
+  $comp: &;
+
+  position: fixed;
+  z-index: 2000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+
+  transition: 0.5s;
+  transform: translateY(100%);
+
+  &.show {
+    transform: none;
+  }
+
+  &.success {
+
+    #{$comp}__success {
+      display: block;
+    }
+  }
+  &.error {
+
+    #{$comp}__error {
+      display: block;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__alert {
+    display: none;
+  } 
+}

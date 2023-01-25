@@ -1,0 +1,81 @@
+.comment {
+  $comp: &;
+  position: relative;
+  z-index: 0;
+
+  display: flex;
+
+  &__col {
+    &:nth-child(2) {
+      max-width: 500px;
+      width: 100%;
+
+      &.active {
+        #{$comp}__text {
+          display: none;
+        }
+        #{$comp}__area {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__author {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+  }
+
+  &__text {
+  }
+
+  &__area {
+    display: none;
+  }
+
+  &__buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+
+    &.active {
+      #{$comp}__svg--edit {
+        display: none;
+      }
+      #{$comp}__svg--ok {
+        display: block;
+      }
+    }
+  }
+
+  &__svg {
+    width: 24px;
+    height: 24px;
+
+    &--edit {
+      width: 18px;
+      height: 18px;
+    }
+    &--ok {
+      width: 18px;
+      height: 18px;
+      display: none;
+    }
+  }
+}
+

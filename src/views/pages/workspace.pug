@@ -1,0 +1,172 @@
+extends ../layouts/master
+
+include ../components/modals
+
+
+block content
+  .workspace
+    .container
+      .mb-5 
+        .row.row-cols-auto 
+          .col
+            h4 
+              |Владелец
+            .row.row-cols-auto 
+              .col 
+                .user(data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="LOl example.")
+                  img.user__img(src="assets/images/qwe.jpg", alt="")
+      .workspace__search 
+        h2.mb-4
+          |Рабочая область
+        .workspace__row 
+          .workspace__col
+            .workspace__buttons
+              button.btn.btn-primary.btn-lg(data-bs-toggle="modal" data-bs-target="#taskModal")
+                |Добавить задачу
+              button.btn.btn-primary.btn-lg(data-bs-toggle="modal" data-bs-target="#workspaceModal")
+                |Настройки
+          .workspace__col
+            form.row(action="/" data-search-form='') 
+              .col.col-8.clear
+                input.form-control.form-control-lg(type="text" placeholder='Введите название задачи')
+                .clear__btn(data-search-clear='')
+                  +cross-svg
+              .col.col-4.row
+                button.btn.btn-primary.btn-lg
+                  |Найти
+      .workspace__container(data-workspace-container='')
+        .workspace__empty  
+        .workspace__content
+          h2.mb-4
+            |Ваши задачи
+          .accordion#accordion(data-tasks-container='')
+            .accordion-item.completed(data-entity='tasks' data-entity-id='1')
+              .accordion-header
+                button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
+                  .col.me-3
+                    .row.align-items-center
+                      .col
+                        h4(data-task-field='text' data-uf='name')
+                          |Lorem, ipsum dolor.
+                      .col
+                        .row.row-cols-auto.align-items-center
+                          .col
+                            .user 
+                              img.user__img(src="assets/images/qwe.jpg", alt="")
+                          .col
+                            p.h5
+                              |Nikita
+              .accordion-collaps.collapse#collapseOne(data-bs-parent="#accordionExample")
+                .accordion-body 
+                  .ps-5
+                    .mb-4
+                      p.h5(data-task-field='text' data-uf='description')
+                        |Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque exercitationem minima debitis cumque sed corrupti repellendus excepturi! Veniam nesciunt corporis mollitia eligendi.
+                    .mb-4(data-clone-parent='')
+                      .mb-3
+                        .list-group(data-clone-container='')
+                          .list-group-item.delete(data-entity='subtasks' data-entity-id='1')
+                            .checkbox
+                              label.checkbox__label
+                                input.checkbox__input(type="checkbox" data-entity-field="complete")
+                                .checkbox__box 
+                                  +check-svg.checkbox__svg
+                                .checkbox__caption(data-entity-field='name')
+                                  |qwe
+                            .delete__btn(data-delete-entity='')
+                              +cross-svg
+                      form.row.row-cols-auto(action="/" data-add-form='subtasks') 
+                        .col
+                          input.form-control.form-control-sm(type="text" data-form-field='name' required)
+                        .col
+                          button.btn.btn-primary.btn-sm 
+                            |Добавить подзачаду
+                    .mb-4
+                      .row.row-cols-auto.mb-3 
+                        .col
+                          .accordion__time 
+                            p.h5
+                              |Ожидаемое время выполнения
+                            p.h6(data-task-field='text' data-uf='expectedTime')
+                              |22.01.2022
+                        .col
+                          -
+                            var options = [
+                              {value: 'complete', text: 'Выполнена'},
+                              {value: 'going', text: 'В процессе'},
+                              {value: 'planned', text: 'Запланировано'},
+                            ]
+                          p.h5
+                            |Статус
+                          .accordion__select
+                            +select(options = options)
+                      .row.row-cols-auto 
+                        .col
+                          button.btn.btn-primary(data-save-task='')
+                            |Сохранить
+                        .col
+                          button.btn.btn-primary(data-delete-entity='')
+                            |Удалить
+                    .col.mb-4(data-clone-parent='')
+                      .list-group.list-group-flush.mb-3(data-clone-container='')
+                        .list-group-item(data-entity='comments' data-entity-id='1')
+                          .comment
+                            .comment__col
+                              .accordion__user 
+                                .accordion__user-icon 
+                                  img.accordion__user-img(src="assets/images/qwe.jpg", alt="")
+                            .comment__col(data-comment-col='')
+                              .comment__author 
+                                |Nikita qwe
+                              p.comment__text
+                                |xcc
+                              textarea.accordion__textarea.comment__area(placeholder="Изменить комментарий")
+                            .comment__buttons 
+                              .comment__item(data-comment-edit='')
+                                +edit-svg.comment__svg.comment__svg--edit
+                                +ok-svg.comment__svg.comment__svg--ok
+                              .comment__item(data-delete-entity='')
+                                +cross-svg.comment__svg
+                      form.row.row-cols-auto.align-items-center(action="/" data-add-form='comments')  
+                        .col
+                          .user 
+                            img.user__img(src="assets/images/qwe.jpg", alt="")
+                        .col.col-5
+                          textarea.form-control(placeholder="Оставить комментарий" data-form-field='body')
+                        .col
+                          button.btn.btn-primary
+                            |Отправить
+                    .col.col-5
+                      h5 
+                        |Прикрепленные файлы
+                      ol.list-group.list-group-numbered
+                        li.list-group-item.delete(data-entity='files' data-entity-id='1')
+                          a.file-download(href="#")
+                            |qwe
+                          .delete__btn(data-delete-entity='')
+                            +cross-svg
+          .mt-4.workspace__btn(data-show-container='')
+            button.btn.btn-lg.btn-primary(data-show-button='')
+              |Показать еще
+  .panel 
+    svg(xmlns='http://www.w3.org/2000/svg' style='display: none;')
+      symbol#check-circle-fill(viewbox='0 0 16 16')
+        path(d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z')
+      symbol#exclamation-triangle-fill(viewbox='0 0 16 16')
+        path(d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z')
+    .panel__alert.panel__success
+      .alert.alert-success.d-flex.align-items-center(role='alert')
+        svg.panel__icon.bi.flex-shrink-0.me-2(role='img' aria-label='Success:')
+          use(xlink:href='#check-circle-fill')
+        div(data-alert-message='')
+          | An example success alert with an icon
+    .panel__alert.panel__error
+      .alert.alert-danger.d-flex.align-items-center(role='alert')
+        svg.panel__icon.bi.flex-shrink-0.me-2(role='img' aria-label='Danger:')
+          use(xlink:href='#exclamation-triangle-fill')
+        div(data-alert-message='')
+          | An example danger alert with an icon
+
+  +task-modal
+  +user-modal
+  +workspace-modal

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<script defer="defer" src="assets/vendor.js"></script>
+		<script defer="defer" src="assets/app.js"></script>
+		<link href="276.css" rel="stylesheet">
+		<link href="app.css" rel="stylesheet">
+	</head>
+
+	<body class="body">
+		<div class="wrapper">
+			<header class="navbar navbar-expand-lg pb-3 pt-3 navbar-dark bg-primary">
+				<div class="container row-cols-auto justify-content-between">
+					<div class="col-4">
+						<div class="dropdown" data-clone-parent=""><button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">Рабочее пространство</button>
+							<form class="dropdown-menu p-4" data-workspace-form="" action="/" data-add-form="workspace">
+								<div class="mb-3">
+									<div class="mb-2"><input class="form-control form-control--sm" placeholder="Введите название" data-workspace-name="" required="required" data-form-field="name" /></div><button class="btn btn-primary btn-sm">Создать рабочее пространство</button>
+								</div>
+								<div class="list" data-clone-container=""><a class="dropdown-item" href="#">qwe</a><a class="dropdown-item" href="#"> qwe</a></div>
+							</form>
+						</div>
+					</div>
+					<div class="col">
+						<div class="dropdown">
+							<div class="user dropdowm-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"><img class="user__img" src="assets/images/qwe.jpg" alt="" /></div>
+							<div class="dropdown-menu"><a class="dropdown-item" href="#">Выйти</a></div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="main">
+				<div class="workspace">
+					<div class="container">
+						<div class="workspace__search">
+							<h2 class="mb-4">Рабочая область</h2>
+							<div class="workspace__row">
+								<div class="workspace__col">
+									<div class="workspace__buttons"><button class="btn btn-primary btn-lg" data-fancy-button="addTask">Добавить задачи</button><button class="btn btn-primary btn-lg" data-fancy-button="addUser">Добавить пользователя</button></div>
+								</div>
+								<div class="workspace__col"><input class="form-control form-control-lg" placeholder="Поиск"></div>
+								<div class="workspace__col">
+									<div class="btn btn-primary btn-lg">Найти</div>
+								</div>
+							</div>
+						</div>
+						<div class="workspace__container">
+							<div class="workspace__empty"></div>
+							<div class="workspace__content">
+								<h2 class="mb-4">Ваши задачи</h2>
+								<div class="accordion" id="accordion">
+									<div class="accordion-item">
+										<div class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												<div class="col me-3">
+													<div class="row">
+														<div class="accordion__col">
+															<div class="accordion__title" data-task-field="text" data-uf="name">Lorem, ipsum dolor.</div>
+														</div>
+														<div class="accordion__col">
+															<div class="accordion__user">
+																<div class="accordion__user-icon"><img class="accordion__user-img" src="assets/images/qwe.jpg" alt=""></div>
+																<div class="accordion__user-name">Nikita</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</button></div>
+										<div class="accordion-collaps collapse" id="collapseOne" data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<div class="ps-5">
+													<div class="mb-4">
+														<p class="h6" data-task-field="text" data-uf="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque exercitationem minima debitis cumque sed corrupti repellendus excepturi! Veniam nesciunt corporis mollitia eligendi.</p>
+													</div>
+													<div class="mb-4"><template data-subtask-template="">
+															<div class="list-group-item" data-subtask="">
+																<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" data-subtask-complete="">
+																		<div class="checkbox__box"><svg class="checkbox__svg" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M3.33301 8.33331L6.44434 11.3333L12.6663 5.33331" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg></div>
+																		<div class="checkbox__caption" data-subtask-name="">qwe</div>
+																	</label></div>
+															</div>
+														</template>
+														<div class="list-group" data-subtask-container="">
+															<div class="list-group-item" data-subtask="1">
+																<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" data-subtask-complete="">
+																		<div class="checkbox__box"><svg class="checkbox__svg" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M3.33301 8.33331L6.44434 11.3333L12.6663 5.33331" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg></div>
+																		<div class="checkbox__caption" data-subtask-name="">qwe</div>
+																	</label></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="workspace__tasks">
+									<li class="workspace__item">
+										<div class="accordion" data-accordion="" data-task="1">
+											<div class="accordion__head" data-accordion-button="">
+												<div class="accordion__row">
+													<div class="accordion__col">
+														<div class="accordion__title" data-task-field="text" data-uf="name">Lorem, ipsum dolor.</div>
+													</div>
+													<div class="accordion__col">
+														<div class="accordion__user">
+															<div class="accordion__user-icon"><img class="accordion__user-img" src="assets/images/qwe.jpg" alt=""></div>
+															<div class="accordion__user-name">Nikita</div>
+														</div>
+														<div class="accordion__icon"><svg class="accordion__svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																<path d="M19 8.5L12 15.5L5 8.5" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+															</svg></div>
+													</div>
+												</div>
+											</div>
+											<div class="accordion__body" data-accordion-dropdown="">
+												<div class="accordion__container">
+													<p class="accordion__description" data-task-field="text" data-uf="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae debitis est, vel dolor, expedita incidunt facere maiores, blanditiis aut mollitia sit accusamus sapiente quaerat doloremque natus consequatur possimus quibusdam molestias eum?</p>
+													<div class="accordion__subtasks" data-subtask-parent=""><template data-subtask-template="">
+															<div class="accordion__item" data-subtask="">
+																<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" data-subtask-complete="">
+																		<div class="checkbox__box"><svg class="checkbox__svg" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M3.33301 8.33331L6.44434 11.3333L12.6663 5.33331" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg></div>
+																		<div class="checkbox__caption" data-subtask-name=""></div>
+																	</label></div>
+																<div class="accordion__delete" data-subtask-delete=""><svg class="accordion__delete-svg" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.62621 21.9596C8.23568 22.3501 8.23568 22.9833 8.62621 23.3738C9.01673 23.7643 9.6499 23.7643 10.0404 23.3738L8.62621 21.9596ZM16.7071 16.7071C17.0976 16.3166 17.0976 15.6835 16.7071 15.2929C16.3166 14.9024 15.6834 14.9024 15.2929 15.2929L16.7071 16.7071ZM15.2929 15.2929C14.9023 15.6835 14.9023 16.3166 15.2929 16.7071C15.6834 17.0977 16.3166 17.0977 16.7071 16.7071L15.2929 15.2929ZM23.3737 10.0405C23.7643 9.64996 23.7643 9.01679 23.3737 8.62627C22.9832 8.23574 22.3501 8.23574 21.9595 8.62627L23.3737 10.0405ZM16.7071 15.2929C16.3166 14.9024 15.6834 14.9024 15.2929 15.2929C14.9023 15.6835 14.9023 16.3166 15.2929 16.7071L16.7071 15.2929ZM21.9595 23.3738C22.3501 23.7643 22.9832 23.7643 23.3737 23.3738C23.7643 22.9833 23.7643 22.3501 23.3737 21.9596L21.9595 23.3738ZM15.2929 16.7071C15.6834 17.0977 16.3166 17.0977 16.7071 16.7071C17.0976 16.3166 17.0976 15.6835 16.7071 15.2929L15.2929 16.7071ZM10.0404 8.62627C9.6499 8.23574 9.01673 8.23574 8.62621 8.62627C8.23568 9.01679 8.23568 9.64996 8.62621 10.0405L10.0404 8.62627ZM10.0404 23.3738L16.7071 16.7071L15.2929 15.2929L8.62621 21.9596L10.0404 23.3738ZM16.7071 16.7071L23.3737 10.0405L21.9595 8.62627L15.2929 15.2929L16.7071 16.7071ZM15.2929 16.7071L21.9595 23.3738L23.3737 21.9596L16.7071 15.2929L15.2929 16.7071ZM16.7071 15.2929L10.0404 8.62627L8.62621 10.0405L15.2929 16.7071L16.7071 15.2929Z" fill="#1D1117"></path>
+																	</svg></div>
+															</div>
+														</template>
+														<div class="accordion__list" data-subtask-container="">
+															<div class="accordion__item" data-subtask="1">
+																<div class="checkbox"><label class="checkbox__label"><input class="checkbox__input" type="checkbox" data-subtask-complete="">
+																		<div class="checkbox__box"><svg class="checkbox__svg" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M3.33301 8.33331L6.44434 11.3333L12.6663 5.33331" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg></div>
+																		<div class="checkbox__caption" data-subtask-name="">qwe</div>
+																	</label></div>
+																<div class="accordion__delete" data-subtask-delete=""><svg class="accordion__delete-svg" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.62621 21.9596C8.23568 22.3501 8.23568 22.9833 8.62621 23.3738C9.01673 23.7643 9.6499 23.7643 10.0404 23.3738L8.62621 21.9596ZM16.7071 16.7071C17.0976 16.3166 17.0976 15.6835 16.7071 15.2929C16.3166 14.9024 15.6834 14.9024 15.2929 15.2929L16.7071 16.7071ZM15.2929 15.2929C14.9023 15.6835 14.9023 16.3166 15.2929 16.7071C15.6834 17.0977 16.3166 17.0977 16.7071 16.7071L15.2929 15.2929ZM23.3737 10.0405C23.7643 9.64996 23.7643 9.01679 23.3737 8.62627C22.9832 8.23574 22.3501 8.23574 21.9595 8.62627L23.3737 10.0405ZM16.7071 15.2929C16.3166 14.9024 15.6834 14.9024 15.2929 15.2929C14.9023 15.6835 14.9023 16.3166 15.2929 16.7071L16.7071 15.2929ZM21.9595 23.3738C22.3501 23.7643 22.9832 23.7643 23.3737 23.3738C23.7643 22.9833 23.7643 22.3501 23.3737 21.9596L21.9595 23.3738ZM15.2929 16.7071C15.6834 17.0977 16.3166 17.0977 16.7071 16.7071C17.0976 16.3166 17.0976 15.6835 16.7071 15.2929L15.2929 16.7071ZM10.0404 8.62627C9.6499 8.23574 9.01673 8.23574 8.62621 8.62627C8.23568 9.01679 8.23568 9.64996 8.62621 10.0405L10.0404 8.62627ZM10.0404 23.3738L16.7071 16.7071L15.2929 15.2929L8.62621 21.9596L10.0404 23.3738ZM16.7071 16.7071L23.3737 10.0405L21.9595 8.62627L15.2929 15.2929L16.7071 16.7071ZM15.2929 16.7071L21.9595 23.3738L23.3737 21.9596L16.7071 15.2929L15.2929 16.7071ZM16.7071 15.2929L10.0404 8.62627L8.62621 10.0405L15.2929 16.7071L16.7071 15.2929Z" fill="#1D1117"></path>
+																	</svg></div>
+															</div>
+														</div>
+														<form class="accordion__subtasks-add" action="/" data-subtask-form=""><input class="accordion__input" data-subtask-input="" required>
+															<div class="accordion__subtasks-btn"><button class="button">Добавить подзачаду</button></div>
+														</form>
+													</div>
+													<div class="accordion__inner">
+														<div class="accordion__inner-item">
+															<div class="accordion__time">
+																<div class="accordion__label">Ожидаемое время выполнения</div>
+																<div class="accordion__text" data-task-field="text" data-uf="expectedTime">22.01.2022</div>
+															</div>
+														</div>
+														<div class="accordion__inner-item">
+															<div class="accordion__label">Статус</div>
+															<div class="accordion__select">
+																<div class="select-wrapper">
+																	<div class="select select--small"><select class="select__select" style="width: 100%" data-select="">
+																			<option value="complete">Выполнена</option>
+																			<option value="going">В процессе</option>
+																			<option value="planned">Запланировано</option>
+																		</select></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="accordion__buttons">
+														<div class="accordion__button"><button class="button" data-save-task="">Сохранить</button></div>
+														<div class="accordion__button"><button class="button" data-delete-task="">Удалить</button></div>
+													</div>
+													<div class="accordion__comments" data-comment=""><template data-comment-template="">
+															<div class="accordion__comments-item" data-comment-parent="">
+																<div class="comment" data-task-comment="">
+																	<div class="comment__col">
+																		<div class="accordion__user">
+																			<div class="accordion__user-icon"><img class="accordion__user-img" src="assets/images/qwe.jpg" alt=""></div>
+																		</div>
+																	</div>
+																	<div class="comment__col" data-comment-col="">
+																		<div class="comment__author">Nikita qwe</div>
+																		<p class="comment__text" data-comment-text=""></p><textarea class="accordion__textarea comment__area" placeholder="Изменить комментарий"></textarea>
+																	</div>
+																	<div class="comment__buttons">
+																		<div class="comment__item" data-comment-edit=""><svg class="comment__svg comment__svg--edit" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M12 20H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																				<path d="M16.5 3.5C16.8978 3.10218 17.4374 2.87868 18 2.87868C18.2786 2.87868 18.5544 2.93355 18.8118 3.04016C19.0692 3.14676 19.303 3.30302 19.5 3.5C19.697 3.69698 19.8532 3.93084 19.9598 4.18821C20.0665 4.44558 20.1213 4.72143 20.1213 5C20.1213 5.27858 20.0665 5.55443 19.9598 5.8118C19.8532 6.06917 19.697 6.30302 19.5 6.5L7 19L3 20L4 16L16.5 3.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg><svg class="comment__svg comment__svg--ok" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M20 6L9 17L4 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg></div>
+																		<div class="comment__item" data-comment-delete=""><svg class="comment__svg" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M8.62621 21.9596C8.23568 22.3501 8.23568 22.9833 8.62621 23.3738C9.01673 23.7643 9.6499 23.7643 10.0404 23.3738L8.62621 21.9596ZM16.7071 16.7071C17.0976 16.3166 17.0976 15.6835 16.7071 15.2929C16.3166 14.9024 15.6834 14.9024 15.2929 15.2929L16.7071 16.7071ZM15.2929 15.2929C14.9023 15.6835 14.9023 16.3166 15.2929 16.7071C15.6834 17.0977 16.3166 17.0977 16.7071 16.7071L15.2929 15.2929ZM23.3737 10.0405C23.7643 9.64996 23.7643 9.01679 23.3737 8.62627C22.9832 8.23574 22.3501 8.23574 21.9595 8.62627L23.3737 10.0405ZM16.7071 15.2929C16.3166 14.9024 15.6834 14.9024 15.2929 15.2929C14.9023 15.6835 14.9023 16.3166 15.2929 16.7071L16.7071 15.2929ZM21.9595 23.3738C22.3501 23.7643 22.9832 23.7643 23.3737 23.3738C23.7643 22.9833 23.7643 22.3501 23.3737 21.9596L21.9595 23.3738ZM15.2929 16.7071C15.6834 17.0977 16.3166 17.0977 16.7071 16.7071C17.0976 16.3166 17.0976 15.6835 16.7071 15.2929L15.2929 16.7071ZM10.0404 8.62627C9.6499 8.23574 9.01673 8.23574 8.62621 8.62627C8.23568 9.01679 8.23568 9.64996 8.62621 10.0405L10.0404 8.62627ZM10.0404 23.3738L16.7071 16.7071L15.2929 15.2929L8.62621 21.9596L10.0404 23.3738ZM16.7071 16.7071L23.3737 10.0405L21.9595 8.62627L15.2929 15.2929L16.7071 16.7071ZM15.2929 16.7071L21.9595 23.3738L23.3737 21.9596L16.7071 15.2929L15.2929 16.7071ZM16.7071 15.2929L10.0404 8.62627L8.62621 10.0405L15.2929 16.7071L16.7071 15.2929Z" fill="#1D1117"></path>
+																			</svg></div>
+																	</div>
+																</div>
+															</div>
+														</template>
+														<div class="accordion__comments-list" data-comment-container=""></div>
+														<form class="accordion__comments-row" action="/" data-comment-form="">
+															<div class="accordion__comments-col">
+																<div class="accordion__user">
+																	<div class="accordion__user-icon"><img class="accordion__user-img" src="assets/images/qwe.jpg" alt=""></div>
+																</div>
+															</div>
+															<div class="accordion__comments-col"><textarea class="accordion__textarea" placeholder="Оставить комментарий"></textarea></div>
+															<div class="accordion__comments-col"><button class="button">Отправить</button></div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal" id="taskModal" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal__container">
+							<div class="modal__title">Добавить задачу</div>
+							<form class="form" action="/" data-parsley-validate="data-parsley-validate" data-type="js-form">
+								<div class="form__item"><input class="form__input" placeholder="Название" required="true" data-type="get-field" data-uf="name" /></div>
+								<div class="form__item">
+									<div class="modal__label">Ожидаемое время выполнения</div><input class="form__input" type="date" data-type="get-field" data-uf="expectedTime" />
+								</div>
+								<div class="form__item">
+									<div class="select-wrapper">
+										<div class="select select--small"><select class="select__select" data-select-placeholder="Выберете статус" style="width: 100%" data-select="">
+												<option value="" disabled="disabled" selected="selected"></option>
+												<option value="going">В процессе</option>
+												<option value="planned">Запланировано</option>
+											</select></div>
+									</div>
+								</div>
+								<div class="form__item"><textarea class="form__textarea" placeholder="Описание" data-type="get-field" data-uf="description"></textarea></div>
+								<div class="form__inner">
+									<div class="form__container">
+										<div class="form__wrapper" data-add-container="">
+											<div class="form__item" data-add-item=""><input class="form__input" placeholder="Название подзадачи" data-type="get-field" data-uf="subtasks" /></div>
+										</div>
+										<div class="form__item"><button class="button" type="button" data-add-button="">Добавить подзадачу</button></div>
+									</div>
+								</div>
+								<div class="form__inner"><button class="button">Добавить</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal" data-fancy-modal="addUser">
+					<div class="modal__container">
+						<div class="modal__title">Добавить пользователя</div>
+						<form class="form" action="/" data-parsley-validate="data-parsley-validate" data-form="">
+							<div class="form__item"><input class="form__input" type="email" placeholder="Email пользователя" required="true" data-type="get-field" data-uf="email" /></div>
+							<div class="form__item">
+								<div class="select-wrapper">
+									<div class="select select--small"><select class="select__select" data-select-placeholder="Выберете роль" style="width: 100%" data-select="">
+											<option value="" disabled="disabled" selected="selected"></option>
+											<option value="EXECUTOR">Исполнитель</option>
+											<option value="OBSERVER">Наблюдатель</option>
+											<option value="FULL_AUTHORITIES">Полные права</option>
+										</select></div>
+								</div>
+							</div>
+							<div class="form__inner"><button class="button">Добавить</button></div>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+
+</html>

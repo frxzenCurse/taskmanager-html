@@ -1,0 +1,228 @@
+extends ../layouts/master
+
+include ../components/modals
+
+
+block content
+  .workspace
+    .container
+      .workspace__search 
+        h2.mb-4
+          |Рабочая область
+        .workspace__row 
+          .workspace__col
+            .workspace__buttons
+              button.btn.btn-primary.btn-lg(data-fancy-button='addTask')
+                |Добавить задачи
+              button.btn.btn-primary.btn-lg(data-fancy-button='addUser')
+                |Добавить пользователя
+          .workspace__col
+            input.form-control.form-control-lg(type="text" placeholder='Поиск')
+          .workspace__col
+            .btn.btn-primary.btn-lg
+              |Найти
+      .workspace__container
+        .workspace__empty  
+        .workspace__content
+          h2.mb-4
+            |Ваши задачи
+          .accordion#accordion
+            .accordion-item
+              .accordion-header
+                button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
+                  .col.me-3
+                    .row
+                      .accordion__col
+                        .accordion__title(data-task-field='text' data-uf='name')
+                          |Lorem, ipsum dolor.
+                      .accordion__col
+                        .accordion__user 
+                          .accordion__user-icon 
+                            img.accordion__user-img(src="assets/images/qwe.jpg", alt="")
+                          .accordion__user-name 
+                            |Nikita
+              .accordion-collaps.collapse#collapseOne(data-bs-parent="#accordionExample")
+                .accordion-body 
+                  .ps-5
+                    .mb-4
+                      p.h6(data-task-field='text' data-uf='description')
+                        |Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque exercitationem minima debitis cumque sed corrupti repellendus excepturi! Veniam nesciunt corporis mollitia eligendi.
+                    .mb-4 
+                      template(data-subtask-template='')
+                        .list-group-item(data-subtask='')
+                          .checkbox
+                            label.checkbox__label
+                              input.checkbox__input(type="checkbox" data-subtask-complete='')
+                              .checkbox__box 
+                                +check-svg.checkbox__svg
+                              .checkbox__caption(data-subtask-name='')
+                                |qwe
+                      .list-group(data-subtask-container='')
+                        .list-group-item(data-subtask='1')
+                          .checkbox
+                            label.checkbox__label
+                              input.checkbox__input(type="checkbox" data-subtask-complete='')
+                              .checkbox__box 
+                                +check-svg.checkbox__svg
+                              .checkbox__caption(data-subtask-name='')
+                                |qwe
+          ul.workspace__tasks 
+            li.workspace__item 
+              .accordion(data-accordion='' data-task='1')
+                .accordion__head(data-accordion-button='')
+                  .accordion__row
+                    .accordion__col
+                      .accordion__title(data-task-field='text' data-uf='name')
+                        |Lorem, ipsum dolor.
+                    .accordion__col
+                      .accordion__user 
+                        .accordion__user-icon 
+                          img.accordion__user-img(src="assets/images/qwe.jpg", alt="")
+                        .accordion__user-name 
+                          |Nikita
+                      .accordion__icon 
+                        +arrow-svg.accordion__svg 
+                .accordion__body(data-accordion-dropdown='')
+                  .accordion__container
+                    p.accordion__description(data-task-field='text' data-uf='description')
+                      |Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae debitis est, vel dolor, expedita incidunt facere maiores, blanditiis aut mollitia sit accusamus sapiente quaerat doloremque natus consequatur possimus quibusdam molestias eum?
+                    .accordion__subtasks(data-subtask-parent='')
+                      template(data-subtask-template='')
+                        .accordion__item(data-subtask='')
+                          .checkbox
+                            label.checkbox__label
+                              input.checkbox__input(type="checkbox" data-subtask-complete='')
+                              .checkbox__box 
+                                +check-svg.checkbox__svg
+                              .checkbox__caption(data-subtask-name='')
+                          .accordion__delete(data-subtask-delete='')
+                            +cross-svg.accordion__delete-svg
+                      .accordion__list(data-subtask-container='')
+                        .accordion__item(data-subtask='1')
+                          .checkbox
+                            label.checkbox__label
+                              input.checkbox__input(type="checkbox" data-subtask-complete='')
+                              .checkbox__box 
+                                +check-svg.checkbox__svg
+                              .checkbox__caption(data-subtask-name='')
+                                |qwe
+                          .accordion__delete(data-subtask-delete='')
+                            +cross-svg.accordion__delete-svg
+                      form.accordion__subtasks-add(action="/" data-subtask-form='') 
+                        input.accordion__input(type="text" data-subtask-input='' required)
+                        .accordion__subtasks-btn 
+                          button.button 
+                            |Добавить подзачаду
+                    .accordion__inner
+                      .accordion__inner-item
+                        .accordion__time 
+                          .accordion__label
+                            |Ожидаемое время выполнения
+                          .accordion__text(data-task-field='text' data-uf='expectedTime')
+                            |22.01.2022
+                      .accordion__inner-item
+                        -
+                          var options = [
+                            {value: 'complete', text: 'Выполнена'},
+                            {value: 'going', text: 'В процессе'},
+                            {value: 'planned', text: 'Запланировано'},
+                          ]
+                        .accordion__label
+                          |Статус
+                        .accordion__select
+                          +select(options = options)
+                    .accordion__buttons 
+                      .accordion__button 
+                        button.button(data-save-task='')
+                          |Сохранить
+                      .accordion__button
+                        button.button(data-delete-task='') 
+                          |Удалить
+                    .accordion__comments(data-comment='')
+                      template(data-comment-template='')
+                        .accordion__comments-item(data-comment-parent='') 
+                          .comment(data-task-comment='')
+                            .comment__col
+                              .accordion__user 
+                                .accordion__user-icon 
+                                  img.accordion__user-img(src="assets/images/qwe.jpg", alt="")
+                            .comment__col(data-comment-col='')
+                              .comment__author 
+                                |Nikita qwe
+                              p.comment__text(data-comment-text='')
+                              textarea.accordion__textarea.comment__area(placeholder="Изменить комментарий")
+                            .comment__buttons 
+                              .comment__item(data-comment-edit='')
+                                +edit-svg.comment__svg.comment__svg--edit
+                                +ok-svg.comment__svg.comment__svg--ok
+                              .comment__item(data-comment-delete='')
+                                +cross-svg.comment__svg
+                      .accordion__comments-list(data-comment-container='')
+                      form.accordion__comments-row(action='/' data-comment-form='')
+                        .accordion__comments-col
+                          .accordion__user 
+                            .accordion__user-icon 
+                              img.accordion__user-img(src="assets/images/qwe.jpg", alt="")
+                        .accordion__comments-col
+                          textarea.accordion__textarea(placeholder="Оставить комментарий")
+                        .accordion__comments-col
+                          button.button 
+                            |Отправить
+  +task-modal
+  +user-modal
+
+
+
+mixin task-modal
+  .modal#taskModal(aria-hidden='true')
+    .modal-dialog.modal-dialog-centered
+      .modal__container 
+        .modal__title 
+          |Добавить задачу
+        form.form(action="/" data-parsley-validate data-type='js-form')
+          .form__item 
+            +input(type = 'text' placeholder = 'Название' required='true' data-type='get-field' data-uf='name')
+          .form__item 
+            .modal__label
+              |Ожидаемое время выполнения
+            +input(type = 'date' data-type='get-field' data-uf='expectedTime')
+          .form__item 
+            -
+              var options = [
+                {value: 'going', text: 'В процессе'},
+                {value: 'planned', text: 'Запланировано'},
+              ]
+            +select(options = options placeholder='Выберете статус')
+          .form__item
+            +textarea(placeholder = 'Описание' data-type='get-field' data-uf='description')
+          .form__inner 
+            .form__container 
+              .form__wrapper(data-add-container='')
+                .form__item(data-add-item='')
+                  +input(type='text' placeholder='Название подзадачи' data-type='get-field' data-uf='subtasks')
+              .form__item 
+                button.button(type='button' data-add-button='')
+                  |Добавить подзадачу
+          .form__inner 
+            button.button
+              |Добавить
+
+mixin user-modal 
+  .modal(data-fancy-modal='addUser')
+    .modal__container 
+      .modal__title 
+        |Добавить пользователя
+      form.form(action="/" data-parsley-validate data-form='')
+        .form__item 
+          +input(type = 'email' placeholder = 'Email пользователя' required='true' data-type='get-field' data-uf='email')
+        .form__item 
+          -
+            var options = [
+              {value: 'EXECUTOR', text: 'Исполнитель'},
+              {value: 'OBSERVER', text: 'Наблюдатель'},
+              {value: 'FULL_AUTHORITIES', text: 'Полные права'},
+            ]
+          +select(options = options placeholder='Выберете роль')
+        .form__inner 
+          button.button
+            |Добавить

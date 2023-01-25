@@ -1,0 +1,25 @@
+mixin header 
+  header.navbar.navbar-expand-lg.pb-3.pt-3.navbar-dark.bg-primary
+    .container.row-cols-auto.justify-content-between
+      .col-4
+        .dropdown(data-clone-parent='')
+          button.btn.btn-secondary.dropdown-toggle(data-bs-toggle='dropdown' aria-expanded="false" data-bs-auto-close="outside")
+            |Рабочее пространство
+          form.dropdown-menu.p-4(data-workspace-form='' action="/" data-add-form='workspace')
+            .mb-3
+              .mb-2
+                input.form-control.form-control--sm(type="text" placeholder="Введите название" data-workspace-name='' required data-form-field='name')
+              button.btn.btn-primary.btn-sm
+                |Создать рабочее пространство
+            .list(data-clone-container='')
+              a.dropdown-item(href="#") 
+                |qwe
+              a.dropdown-item(href="#") 
+                |qwe
+      .col
+        .dropdown
+          .user.dropdowm-toggle(data-bs-toggle='dropdown' aria-expanded="false" data-bs-auto-close="outside")
+            img.user__img(src="assets/images/qwe.jpg", alt="")
+          .dropdown-menu
+            a.dropdown-item(href="#") 
+              |Выйти

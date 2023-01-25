@@ -1,0 +1,58 @@
+//fonts
+@mixin fsl($font-size, $line-height: null, $isRem: false) {
+  @if $isRem {
+    font-size: unquote('#{calc($font-size / $fs)}rem');
+  } @else {
+    font-size: $font-size;
+  }
+  @if $line-height {
+    line-height: calc($line-height / 100%);
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder{
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::placeholder  {
+    @content;
+  }
+}
+
+@mixin scrollbar-hidden() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin cover() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin cropText($lineCount) {
+  display: -moz-box;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+  line-clamp: $lineCount;
+}

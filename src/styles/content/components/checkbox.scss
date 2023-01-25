@@ -1,0 +1,102 @@
+.checkbox {
+  $comp: &;
+  position: relative;
+  z-index: 0;
+
+  &--filters {
+    #{$comp}__label {
+      align-items: center;
+    }
+    #{$comp}__box {
+      --size: 24px;
+      margin-right: 8px;
+    }
+    #{$comp}__text {
+      @include fsl(16px);
+    }
+  }
+
+  &__label {
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    @media (max-width: ($breakpoint - 1px)) {
+      align-items: center;
+    }
+    @media (max-width: ($breakpoint-m - 1px)) {
+      align-items: flex-start;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+      
+    }
+  }
+
+  &__input {
+    position: absolute;
+    left: 0;
+
+    visibility: hidden;
+
+    &:checked {
+      ~#{$comp}__box {
+        border-color: var(--color-blue);
+        background: var(--color-blue);
+
+        #{$comp}__svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__box {
+    --size: 28px;
+
+    margin-right: 16px;
+
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    transition: $transition;
+    border: 2px solid var(--color-borders);
+    border-radius: 4px;
+    background: var(--color-white);
+  }
+
+  &__svg {
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &__text {
+    @include fsl(12px, 120%);
+    letter-spacing: var(--letter-space);
+  }
+
+  &__link {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  &__caption {
+    letter-spacing: -0.5px;
+    @media (max-width: ($breakpoint - 1px)) {
+      letter-spacing: 0;
+      @include fsl(12px, 100%);
+    }
+  }
+
+  .parsley-errors-list {
+    position: absolute;
+    top: 100%;
+    margin-top: 5px;
+  }
+}
